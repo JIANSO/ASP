@@ -20,7 +20,7 @@
 	For Each map In oJSON.data("maps")
 	   Set this = oJSON.data("maps").item(map)
 	   'Response.Write _
-	  '  this.item("mapSeq") & ": " & _
+	   ' this.item("mapSeq") & ": " & _
 	   ' this.item("mapInfo") & "<br>"
 		query = "exec usp_sja_update_nelab_map_info " & this.item("mapSeq")  & ", '"  & this.item("mapInfo") & "' " 
 		ww query
