@@ -18,7 +18,7 @@
 <p style="margin-top:-12px">
     <em class="link">
         <a href="javascript:void(0);" onclick="window.open('http://fiy.daum.net/fiy/map/CsGeneral.daum', '_blank', 'width=981, height=650')">
-            È¤½Ã ÁÖ¼Ò °á°ú°¡ Àß¸ø ³ª¿À´Â °æ¿ì¿¡´Â ¿©±â¿¡ Á¦º¸ÇØÁÖ¼¼¿ä.
+            í˜¹ì‹œ ì£¼ì†Œ ê²°ê³¼ê°€ ì˜ëª» ë‚˜ì˜¤ëŠ” ê²½ìš°ì—ëŠ” ì—¬ê¸°ì— ì œë³´í•´ì£¼ì„¸ìš”.
         </a>
     </em>
 </p>
@@ -28,31 +28,31 @@
 </body>
 <script type="text/javascript">
 
-var mapContainer = document.getElementById('map'), // Áöµµ¸¦ Ç¥½ÃÇÒ div 
-    mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // ÁöµµÀÇ Áß½ÉÁÂÇ¥
-        level: 3 // ÁöµµÀÇ È®´ë ·¹º§
-    };  
+var mapContainer = document.getElementById('map'), // ì§€ë„ë¥¼ í‘œì‹œí•  div 
+mapOption = {
+center: new kakao.maps.LatLng(33.450701, 126.570667), // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ
+level: 3 // ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
+};  
 
-// Áöµµ¸¦ »ı¼ºÇÕ´Ï´Ù    
+// ì§€ë„ë¥¼ ìƒì„±í•©ë‹ˆë‹¤    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-// ÁÖ¼Ò-ÁÂÇ¥ º¯È¯ °´Ã¼¸¦ »ı¼ºÇÕ´Ï´Ù
+// ì£¼ì†Œ-ì¢Œí‘œ ë³€í™˜ ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 var geocoder = new kakao.maps.services.Geocoder();
 
 var addr = [
 /*
 sample
 
-{mapseq: 4, mapaddr:'´ëÀü±¤¿ª½Ã À¯¼º±¸ ¾îÀºµ¿ 110-2 4Ãş ´É·üÁÖ´Ï¾î·¦¾îÀºÇĞ¿ø', mapinfo:'' },
-	{mapseq: 6, mapaddr:'°æ±â ¾È¾ç½Ã ¸¸¾È±¸ °æ¼ö´ë·Î1201¹ø±æ 26¹øÁö ÇÑÀÏºôµù3Ãş', mapinfo:''},
-	{mapseq: 8, mapaddr:'¼­¿ï ³ë¿ø±¸ »ó°è5µ¿	456-126 3Ãş ÁÖ´Ï¾î·¦', mapinfo:''},
-	{mapseq: 14, mapaddr:'¼­¿ï °­ºÏ±¸ ¹Ì¾Æµ¿ 838-62 2Ãş ÁÖ´Ï¾î·¦', mapinfo:''},
-	{mapseq: 21, mapaddr:'ÀüºÏ ÀüÁÖ½Ã ¿Ï»ê±¸ ÁßÈ­»êµ¿2°¡	748-1¹øÁö 2Ãş ÁÖ´Ï¾î·¦', mapinfo:''},
-	{mapseq: 26, mapaddr:'¼­¿ï µµºÀ±¸ Ã¢µ¿ 27 ÁÖ°ø19´ÜÁö »ó°¡ 2Ãş 211È£', mapinfo:''},
-	{mapseq: 27, mapaddr:'¼­¿ï °­¼­±¸ È­°î6µ¿	1099-12¹øÁö 2Ãş', mapinfo:''},
-	{mapseq: 30, mapaddr:'°æ±â ¼ö¿ø½Ã Àå¾È±¸ ÃµÃµµ¿	527-2 ¼öÁ¤ÇÁ¶óÀÚ 303È£', mapinfo:''},
-	{mapseq: 31, mapaddr:'¼­¿ï ¿µµîÆ÷±¸ ¾çÆòµ¿5°¡	74-1 3Ãş', mapinfo:''}
+{mapseq: 4, mapaddr:'ëŒ€ì „ê´‘ì—­ì‹œ ìœ ì„±êµ¬ ì–´ì€ë™ 110-2 4ì¸µ ëŠ¥ë¥ ì£¼ë‹ˆì–´ë©ì–´ì€í•™ì›', mapinfo:'' },
+{mapseq: 6, mapaddr:'ê²½ê¸° ì•ˆì–‘ì‹œ ë§Œì•ˆêµ¬ ê²½ìˆ˜ëŒ€ë¡œ1201ë²ˆê¸¸ 26ë²ˆì§€ í•œì¼ë¹Œë”©3ì¸µ', mapinfo:''},
+{mapseq: 8, mapaddr:'ì„œìš¸ ë…¸ì›êµ¬ ìƒê³„5ë™	456-126 3ì¸µ ì£¼ë‹ˆì–´ë©', mapinfo:''},
+{mapseq: 14, mapaddr:'ì„œìš¸ ê°•ë¶êµ¬ ë¯¸ì•„ë™ 838-62 2ì¸µ ì£¼ë‹ˆì–´ë©', mapinfo:''},
+{mapseq: 21, mapaddr:'ì „ë¶ ì „ì£¼ì‹œ ì™„ì‚°êµ¬ ì¤‘í™”ì‚°ë™2ê°€	748-1ë²ˆì§€ 2ì¸µ ì£¼ë‹ˆì–´ë©', mapinfo:''},
+{mapseq: 26, mapaddr:'ì„œìš¸ ë„ë´‰êµ¬ ì°½ë™ 27 ì£¼ê³µ19ë‹¨ì§€ ìƒê°€ 2ì¸µ 211í˜¸', mapinfo:''},
+{mapseq: 27, mapaddr:'ì„œìš¸ ê°•ì„œêµ¬ í™”ê³¡6ë™	1099-12ë²ˆì§€ 2ì¸µ', mapinfo:''},
+{mapseq: 30, mapaddr:'ê²½ê¸° ìˆ˜ì›ì‹œ ì¥ì•ˆêµ¬ ì²œì²œë™	527-2 ìˆ˜ì •í”„ë¼ì 303í˜¸', mapinfo:''},
+{mapseq: 31, mapaddr:'ì„œìš¸ ì˜ë“±í¬êµ¬ ì–‘í‰ë™5ê°€	74-1 3ì¸µ', mapinfo:''}
 */
 
 ];
@@ -62,12 +62,9 @@ var mapdata = [ ];
 var mapobj = {};
 var mapSeqArr = [];
 
-//
-$(function(){
-	
-	selectAddr();
-	
 
+$(function(){	
+	selectAddr();	
 });
 
 function selectAddr(){
@@ -75,14 +72,14 @@ function selectAddr(){
 		type : 'post'
 		,data : {}		
 		//,contentType: 'application/json; charset=utf-8'
-        ,dataType: 'json'
+		,dataType: 'json'
 		,url : 'ajax_select_map_info.asp'
 		,success : function(e){
 			addr = e;
 			getAddress(0);
 		}
 		, error : function(e){
-		
+
 		}
 	});
 }
@@ -121,30 +118,24 @@ function getAddress(i){
 				insertData();
 			}
 		 }	
-
-		
-
-
 	});   
-	
 }
 
 
-function insertData(){
-	
+function insertData(){	
 
 	$.ajax({
 		type : 'post'
 		//,data : "{ 'maps' :" + JSON.stringify(mapdata) + "}"
 		,data : { 'mapobj' : "{ maps  :" + JSON.stringify(mapdata) + "}" }
 		//,contentType: 'application/json; charset=utf-8'
-        ,dataType: 'text'
+		,dataType: 'text'
 		,url : 'ajax_insert_map_info.asp'
 		,success : function(e){
 			console.log(e);
 		}
 		, error : function(e){
-		
+
 		}
 	});
 }
